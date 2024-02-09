@@ -8,19 +8,29 @@
   overflow-y: auto;
 }
 
+
 .navigation{
-  background-color: rgb(37, 11, 59);
-}
-ul{
-  padding: 2rem;
-  list-style: none;
   display: flex;
   justify-content: space-between;
+  background-color: rgb(37, 11, 59);
+  padding: 2rem;
 }
-li a{
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.btn a{
   text-decoration: none;
-  font-size: 2rem;
-  color: white;
+}
+
+.home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: xx-large;
 }
 
 .carddd{
