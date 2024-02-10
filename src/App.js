@@ -1,13 +1,13 @@
 import { Route, Routes} from "react-router-dom";
 import { useState,useEffect } from "react";
 import MainHeader from "./components/MainHeader";
-import Home from "./components/Home";
-import InputForm from "./components/InputForm";
 import Spinner from "./components/Spinner";
 import Nav from "./components/Nav";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
+import InputForm from "./pages/InputForm";
 
 function App() {
   const[islog, setIslog]=useState(false);
@@ -31,17 +31,16 @@ function App() {
     useEffect(()=>{
       fetchData();
     },[])
-
   return (
     <div className="App">
       <Nav islog={islog} setIslog={setIslog}/>
       <Routes>
         <Route path="/" element={<MainHeader/>}>
-        <Route index element={loading?(<Spinner/>):(<Home product={product}/>)}/>
-        <Route path="/dashboard" element={<Dashboard product={product}/>}/>
-        <Route path="/ipform" element={<InputForm/>}/>
-        <Route path="/login" element={<Login setIslog={setIslog}/>} />
-        <Route path="/signup" element={<Signup/>}/>
+          <Route index element={<Home/>}/>
+          <Route path="/dashboard" element={loading?(<Spinner/>):(<Dashboard product={product}/>)}/>
+          <Route path="/login" element={<Login setIslog={setIslog}/>} />
+          <Route path="/signup" element={<Signup setIslog={setIslog}/>}/>
+          <Route path="/ipform" element={<InputForm/>}/>
         </Route>
       </Routes>  
     </div>

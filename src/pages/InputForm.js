@@ -1,8 +1,6 @@
 import { useState } from "react";
-
 function InputForm(){
   const[info,setInfo]=useState({docid:"",prodid:"",title:"",des:"",price:"",condition:"",date:"",timeold:"",location:"",image:""})
-
   function submitHandler(event){
     event.preventDefault();
     console.log("Form Submitted!!")
@@ -20,8 +18,8 @@ function InputForm(){
   }
 
   return(
-    <div className="ipform">
-        <form onSubmit={submitHandler} className="ip">
+    <div className="ip">
+        <form onSubmit={submitHandler}>
           <div>
             <label htmlFor="text">Title</label>
             <input type="text"
