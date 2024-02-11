@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# JNU Marketplace to sell and buy second hand products.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
