@@ -41,8 +41,10 @@ function InputForm(){
   }
 
   return(
+    <div className="x">
     <div className="ip">
         <form onSubmit={submitHandler}>
+        <div className="ipform">
           <div className="formtitle">
             <label htmlFor="productTilte">Title</label>
             <input type="text"
@@ -103,15 +105,6 @@ function InputForm(){
               required
             </select>
           </div>
-          {/* <div>
-            <label htmlFor="image">Image</label>
-            <input type="file"
-              accept="image/*"
-              onChange={changeHandler}
-              name="image"
-              id="image"
-            />
-          </div> */}
           <div className="formage">
           <label htmlFor="productAge">Product Age</label>
             <input type="text"
@@ -123,8 +116,19 @@ function InputForm(){
              required
             />
           </div>
-          <button>Add Product</button>
+          <div className="formimage">
+            <label htmlFor="image">Image</label>
+            <input type="file"
+              accept="image/*"
+              onChange={changeHandler}
+              name="image"
+              id="image"
+            />
+          </div>
+        </div>  
+        <button>Add Product</button>
         </form>
+    </div>
     </div>
   )
 }
