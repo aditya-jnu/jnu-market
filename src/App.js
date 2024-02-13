@@ -15,7 +15,7 @@ function App() {
   const[loading,setLoading]=useState(true);
   const[product,setProduct]=useState(null);
  
-  // ***********
+
   async function fetchData(){
       setLoading(true);
       const data=await productDataService.getAllProducts();
