@@ -14,7 +14,9 @@ function Card(props){
           <div>
             <p>Age : {props.cardinfo.productAge}</p>
           </div>
-          
+          <div id="location">
+            <p>Location : {props.cardinfo.location}</p>
+          </div>
           </div>
           <button>Contact</button>  
        </div>
