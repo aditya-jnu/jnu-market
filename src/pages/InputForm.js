@@ -41,7 +41,7 @@ function InputForm(){
   }
 
   return(
-    <div className="x">
+  
     <div className="ip">
         <form onSubmit={submitHandler}>
         <div className="ipform">
@@ -129,7 +129,7 @@ function InputForm(){
         <button>Add Product</button>
         </form>
     </div>
-    </div>
+ 
   )
 }
 export default InputForm;

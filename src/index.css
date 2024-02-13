@@ -191,8 +191,8 @@
   border-radius: 0.25rem;
   border: none;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.457);
-  color: rgb(5, 5, 5);
+  background-color: rgba(0, 0, 0, 0.363);
+  color: white;
   font-size: 1rem;
 }
 .formdes{
@@ -203,8 +203,8 @@
   border-radius: 0.25rem;
   border: none;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.457);
-  color: rgb(5, 5, 5);
+  background-color: rgba(0, 0, 0, 0.363);
+  color: white;
   font-size: 1rem;
 }
 .formprice{
@@ -215,8 +215,8 @@
   border-radius: 0.25rem;
   border: none;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.457);
-  color: rgb(5, 5, 5);
+  background-color: rgba(0, 0, 0, 0.363);
+  color: white;
   font-size: 1rem;
 }
  .formimage{
@@ -240,8 +240,8 @@
   border-radius: 0.25rem;
   border: none;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.457);
-  color: rgb(5, 5, 5);
+  background-color: rgba(0, 0, 0, 0.363);
+  color: white;
   font-size: 1rem;
 }
 .formage{
@@ -252,8 +252,8 @@
   border-radius: 0.25rem;
   border: none;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.457);
-  color: rgb(5, 5, 5);
+  background-color: rgba(0, 0, 0, 0.363);
+  color: white;
   font-size: 1rem;
 }
 
