@@ -1,10 +1,29 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
+import productsServices from "../services/products.services";
 function InputForm(){
-  const[info,setInfo]=useState({docid:"",prodid:"",title:"",des:"",price:"",condition:"",date:"",timeold:"",location:"",image:""})
-  function submitHandler(event){
+  const[info,setInfo]=useState({dateListed:"",description:"",location:"",price:"",productAge:"",productTitle:""})
+
+
+  async function submitHandler(event){
     event.preventDefault();
     console.log("Form Submitted!!")
     console.log(info);
+    const newProduct={
+      productTitle:info.productTitle,
+      description:info.description,
+      price:info.price,
+      location:info.location,
+    }
+    try{
+      await productsServices.addProduct(newProduct)
+      toast.success("Success!!")
+    }
+    catch (err){
+        toast.error("Failed");
+        console.log(err)
+    }
+
   }
   function changeHandler(event){
      setInfo((prevState)=>{
@@ -21,21 +40,21 @@ function InputForm(){
     <div className="ip">
         <form onSubmit={submitHandler}>
           <div>
-            <label htmlFor="text">Title</label>
+            <label htmlFor="productTilte">Title</label>
             <input type="text"
              onChange={changeHandler}
-             name="title"
-             value={info.title}
-             id="text"
+             name="productTitle"
+             value={info.productTitle}
+             id="productTilte"
             />
           </div> 
           <div>
-            <label htmlFor="des">Description</label>
+            <label htmlFor="description">Description</label>
             <input type="text"
              onChange={changeHandler}
-             name="des"
-             value={info.des}
-             id="des"
+             name="description"
+             value={info.description}
+             id="description"
             />
           </div>
           <div>
@@ -71,7 +90,7 @@ function InputForm(){
               <option value="Outside JNU">Outside JNU</option>
             </select>
           </div>
-          <div>
+          {/* <div>
             <label htmlFor="image">Image</label>
             <input type="file"
               accept="image/*"
@@ -79,7 +98,7 @@ function InputForm(){
               name="image"
               id="image"
             />
-          </div>
+          </div> */}
           <button>Add Product</button>
         </form>
     </div>
