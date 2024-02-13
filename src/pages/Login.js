@@ -12,9 +12,7 @@ function Login(props){
     function submitHandler(event){
         event.preventDefault();
         props.setIslog(true);
-        localStorage.setItem('props.islog', 'true');
         toast.success("Logged in Successfully!!")
-        props.setIslog(true);
         console.log("Login Done")
         console.log(logininfo);
         navigate("/dashboard")

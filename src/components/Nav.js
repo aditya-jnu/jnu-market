@@ -4,13 +4,13 @@ function Nav(props){
   const navigate =useNavigate();
     function signoutHandle(){
         props.setIslog(false);
-        localStorage.removeItem('islog');
         toast.error("Logged Out!!")
         navigate("/")
     }  
   return(
     <nav className="navigation">  
-          <div className="name" onClick={()=>{navigate("/")}}>Marketplace</div>  
+          <div className="name" onClick={()=>{navigate("/dashboard")}}>Marketplace</div>  
+
           {(!props.islog)?(<div className="btn"><NavLink to="/login"><button>Log in</button></NavLink><NavLink to="/signup"><button>Sign up</button></NavLink></div>):
           (<div className="btn"><NavLink to="/ipform"><button>Sell</button></NavLink><NavLink to="/"><button onClick={signoutHandle}>Sign out</button></NavLink></div>)} 
     </nav>

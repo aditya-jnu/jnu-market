@@ -16,6 +16,7 @@ function InputForm(){
       description:info.description,
       price:info.price,
       location:info.location,
+      productAge:info.productAge
     }
     try{
       await productsServices.addProduct(newProduct)
@@ -42,9 +43,10 @@ function InputForm(){
   return(
     <div className="ip">
         <form onSubmit={submitHandler}>
-          <div>
+          <div className="formtitle">
             <label htmlFor="productTilte">Title</label>
             <input type="text"
+             placeholder="cycle"
              onChange={changeHandler}
              name="productTitle"
              value={info.productTitle}
@@ -52,9 +54,10 @@ function InputForm(){
              required
             />
           </div> 
-          <div>
+          <div  className="formdes">
             <label htmlFor="description">Description</label>
-            <input type="text"
+            <textarea
+             placeholder="kross brand in good condition....."
              onChange={changeHandler}
              name="description"
              value={info.description}
@@ -62,17 +65,20 @@ function InputForm(){
              required
             />
           </div>
-          <div>
+          <div className="formprice">
             <label htmlFor="price">Price</label>
             <input type="number"
+             placeholder="2500"
+             className="no-spinner"
              onChange={changeHandler}
              name="price"
              value={info.price}
              id="price"
+             min={0}
              required
             />
           </div>
-          <div>
+          <div className="formloc">
             <label htmlFor="location">Location</label>
             <select onChange={changeHandler} name="location" id="location" value={info.location}>
               <option value="Mahi/Mandavi" selected>Mahi/Mandavi</option>
@@ -106,6 +112,17 @@ function InputForm(){
               id="image"
             />
           </div> */}
+          <div className="formage">
+          <label htmlFor="productAge">Product Age</label>
+            <input type="text"
+             placeholder="8 months"
+             onChange={changeHandler}
+             name="productAge"
+             value={info.productAge}
+             id="productAge"
+             required
+            />
+          </div>
           <button>Add Product</button>
         </form>
     </div>

@@ -158,7 +158,6 @@
 
 /* *****Selling Page ***** */
 .ip{
-  justify-content: center;
   padding: 5vh;
 }
 .ip form{
@@ -167,25 +166,85 @@
   align-items: center;
   gap: 2vh;
   color: white;
+  font-size: 1.5rem;
 }
 .ip form div{
   display: flex;
   flex-direction: column;
 }
-.ip form div input{
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.formtitle{
+  width: 38vh;
+}
+.formtitle input{
   padding: 0.5rem;
   border-radius: 0.25rem;
   border: none;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.363);
-  color: white;
+  background-color: rgba(255, 255, 255, 0.457);
+  color: rgb(5, 5, 5);
+  font-size: 1rem;
 }
+.formdes{
+  width: 38vh;
+}
+.formdes textarea{
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.457);
+  color: rgb(5, 5, 5);
+  font-size: 1rem;
+}
+.formprice{
+  width: 38vh;
+}
+.formprice input{
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.457);
+  color: rgb(5, 5, 5);
+  font-size: 1rem;
+}
+.formloc{
+  width: 38vh;
+}
+.formloc select{
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.457);
+  color: rgb(5, 5, 5);
+  font-size: 1rem;
+}
+.formage{
+  width: 38vh;
+}
+.formage input{
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.457);
+  color: rgb(5, 5, 5);
+  font-size: 1rem;
+}
+
 .ip form button{
-  width: 25%;
+  width: 20%;
   background-color: yellow;
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  margin: 1.5rem;
   border-radius: 0.25rem;
 }
 

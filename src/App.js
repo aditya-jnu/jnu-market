@@ -15,22 +15,17 @@ function App() {
   const[loading,setLoading]=useState(true);
   const[product,setProduct]=useState(null);
  
-    // ***********
-    async function fetchData(){
+  // ***********
+  async function fetchData(){
       setLoading(true);
       const data=await productDataService.getAllProducts();
-      console.log("hi",data.docs)
       setProduct(data.docs.map((doc)=>({...doc.data(), id:doc.id})));
-      console.log("h",product)
       setLoading(false);
-    }
-    useEffect(()=>{
-      const storedLogin = localStorage.getItem('isLoggedIn');
-      if (storedLogin) {
-      setIslog(true);
-    }
+  }
+  useEffect(()=>{
       fetchData();
-    },[])
+  },[])
+
   return ( 
     <div className="App">
       <Nav islog={islog} setIslog={setIslog}/>
@@ -38,7 +33,7 @@ function App() {
         <Route path="/" element={<MainHeader/>}>
           <Route index element={<Home/>}/>
           <Route path="/dashboard" element={loading?(<Spinner/>):(<Dashboard product={product}/>)}/>
-          <Route path="/login" element={<Login setIslog={setIslog} islog={islog}/>} />
+          <Route path="/login" element={<Login setIslog={setIslog}/>} />
           <Route path="/signup" element={<Signup setIslog={setIslog}/>}/>
           <Route path="/ipform" element={<InputForm/>}/>
         </Route>

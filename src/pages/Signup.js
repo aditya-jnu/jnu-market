@@ -3,6 +3,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+
 function Signup(props){
     const navigate=useNavigate();
     const[pass,isPass]=useState(true); 
@@ -73,10 +74,7 @@ function Signup(props){
                 </div>
             </div>
             {(pass)?<FaEye onClick={()=>isPass(false)} style={{cursor:"pointer"}} />:<FaEyeSlash onClick={()=>isPass(true)} style={{cursor:"pointer"}}/>}
-
-            
-            <button>Create Account</button>
-            
+            <button>Create Account</button>  
         </form>
         <div>OR</div>
         <button className="google">Sign in with Google</button>
