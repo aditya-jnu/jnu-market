@@ -4,6 +4,7 @@ function Nav(props){
   const navigate =useNavigate();
     function signoutHandle(){
         props.setIslog(false);
+        localStorage.removeItem('islog');
         toast.error("Logged Out!!")
         navigate("/")
     }  

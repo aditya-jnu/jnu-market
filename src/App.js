@@ -8,37 +8,37 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import InputForm from "./pages/InputForm";
+import productDataService from "./services/products.services"
 
 function App() {
   const[islog, setIslog]=useState(false);
   const[loading,setLoading]=useState(true);
   const[product,setProduct]=useState(null);
-  let url="https://api.thecatapi.com/v1/images/search?limit=10";
+ 
     // ***********
     async function fetchData(){
       setLoading(true);
-      try{
-        let response = await fetch(url);
-        let output= await response.json();
-        setProduct(output);
-        console.log(output);
-      }
-      catch(error){
-        console.log("Something went wrong!!")
-      }
+      const data=await productDataService.getAllProducts();
+      console.log("hi",data.docs)
+      setProduct(data.docs.map((doc)=>({...doc.data(), id:doc.id})));
+      console.log("h",product)
       setLoading(false);
     }
     useEffect(()=>{
+      const storedLogin = localStorage.getItem('isLoggedIn');
+      if (storedLogin) {
+      setIslog(true);
+    }
       fetchData();
     },[])
-  return (
+  return ( 
     <div className="App">
       <Nav islog={islog} setIslog={setIslog}/>
       <Routes>
         <Route path="/" element={<MainHeader/>}>
           <Route index element={<Home/>}/>
           <Route path="/dashboard" element={loading?(<Spinner/>):(<Dashboard product={product}/>)}/>
-          <Route path="/login" element={<Login setIslog={setIslog}/>} />
+          <Route path="/login" element={<Login setIslog={setIslog} islog={islog}/>} />
           <Route path="/signup" element={<Signup setIslog={setIslog}/>}/>
           <Route path="/ipform" element={<InputForm/>}/>
         </Route>

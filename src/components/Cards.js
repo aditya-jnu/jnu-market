@@ -1,5 +1,6 @@
 import Card from "./Card";
 function Cards(props){
+  console.log("reacehd card",props.product)
  return(
     <div className="carddd">
     <div className="cards">

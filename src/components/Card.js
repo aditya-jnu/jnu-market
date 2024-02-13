@@ -1,7 +1,21 @@
 function Card(props){
     return(
        <div className="card">
-           <img src={props.cardinfo.url}></img>
+        <div className="carddata">
+          <div id="title">
+            <p>{props.cardinfo.productTitle}</p>
+          </div>
+          <div id="price">
+            <p>Price : &#8377;{props.cardinfo.price}</p>
+          </div>
+          <div id="description">
+            <p>{props.cardinfo.description}</p>
+          </div>
+          <div id="location">
+            <p>Location : {props.cardinfo.location}</p>
+          </div>
+          </div>
+          <button>Contact</button>  
        </div>
     )
    }

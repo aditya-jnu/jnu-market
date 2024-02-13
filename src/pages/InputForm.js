@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import productsServices from "../services/products.services";
 function InputForm(){
-  const[info,setInfo]=useState({dateListed:"",description:"",location:"",price:"",productAge:"",productTitle:""})
+  const navigate=useNavigate();
+  const[info,setInfo]=useState({dateListed:"",description:"",location:"Mahi",price:"",productAge:"",productTitle:""})
 
 
   async function submitHandler(event){
@@ -17,12 +19,13 @@ function InputForm(){
     }
     try{
       await productsServices.addProduct(newProduct)
-      toast.success("Success!!")
+      toast.success("Product added successfully!!")
     }
     catch (err){
         toast.error("Failed");
         console.log(err)
     }
+    navigate("/dashboard")
 
   }
   function changeHandler(event){
@@ -46,6 +49,7 @@ function InputForm(){
              name="productTitle"
              value={info.productTitle}
              id="productTilte"
+             required
             />
           </div> 
           <div>
@@ -55,6 +59,7 @@ function InputForm(){
              name="description"
              value={info.description}
              id="description"
+             required
             />
           </div>
           <div>
@@ -64,12 +69,13 @@ function InputForm(){
              name="price"
              value={info.price}
              id="price"
+             required
             />
           </div>
           <div>
             <label htmlFor="location">Location</label>
             <select onChange={changeHandler} name="location" id="location" value={info.location}>
-              <option value="Mahi/Mandavi">Mahi/Mandavi</option>
+              <option value="Mahi/Mandavi" selected>Mahi/Mandavi</option>
               <option value="Lohit">Lohit</option>
               <option value="Chandrabhaga">Chandrabhaga</option>
               <option value="Koyna">Koyna</option>
@@ -88,6 +94,7 @@ function InputForm(){
               <option value="Brahmaputra">Brahmaputra</option>
               <option value="Mahanadi">Mahanadi</option>
               <option value="Outside JNU">Outside JNU</option>
+              required
             </select>
           </div>
           {/* <div>
